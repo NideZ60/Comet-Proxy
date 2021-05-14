@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comet Proxy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- header font -->
+  <link href="//fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
+  
+  <!-- body font -->
+  <link href="//fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+
+  <link href="style.css" rel="stylesheet">
+
+  <link rel="shortcut icon" type="image/jpg" href="https://static.thenounproject.com/png/1598859-200.png"/>
+</head>
+<body>
+
+  <div class="container">
+  
+    <div class="main">
+
+      
+      <div id="error"></div>
+
+      <form action="no-js" method="get" id="proxy-form">
+        <div class="container">
+          <p style="color: blue;">Comet Proxy</p>
+          <p style="font-size: 18px;">Imput the URL you want to access below. (Ex: google.com)</p> 
+          <p style="font-size: 15px;">Basic (Normal Proxy) Use when you want more security</p>          
+          <br><br>
+          <input type="text" id="url" name="url" autofocus="autofocus" class="url" />
+          <input  type="submit" id="btn" value= "Normal" />
+
+          <br><br>
+          <p style="font-size: 15px;">Secure (but slower) use when normal proxy don't work.</p> 
+
+    </form>
+    <form action="no-js" method="get" id="proxy-chain">
+        <div class="container">
+          <input type="text" id="url2" name="url" autofocus="autofocus" class="url" />
+          <input  type="submit" id="btn" value= "Proxy Chain" />
+
+    <br><br>
+    <p style="font-size: 15px;">Securer (but slightly slower) connects to another proxy, use when chain isn't working</p> 
+
+    </form>
+    <form action="no-js" method="get" id="proxy-redi">
+        <div class="container">
+          <input type="text" id="url3" name="url" autofocus="autofocus" class="url" />
+          <input  type="submit" id="btn" value= "Proxy Redirect" />
+
+      <br><br>
+    <p style="font-size: 15px;">Securest (slowest) chains then connects to another proxy, use when all else fails.</p> 
+
+    </form>
+    <form action="no-js" method="get" id="proxy-super">
+        <div class="container">
+          <input type="text" id="url4" name="url" autofocus="autofocus" class="url" />
+          <input  type="submit" id="btn" value= "Proxy Chain + Redirect" />
+        <br><br>
+        <br><br>
+         <a style="color: yellow" href="https://cometproxy.nidez.repl.co/proxy/https:/duckduckgo.com/">DuckDuckGo: Privacy Simplified Unblocked</a>
+
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+
+
+          <p style="font-size: 15px;" style="color: white;">
+        My goal is to make the internet open and free, no restrictions and or limitations holding you back from seeing the truth, this project aims to do that with this unblocker using ways to get around blocking along with security when you surf the web with HTTPS connections and secure 443 https port and other modes connect with 443 + 8080. This is still in its early development stages so more will be added soon -Enjoy!
+      </p>
+      <br><br>
+        <div>
+          <pstyle="font-size: 15px;" style="color: white;">
+            Note: Some webites may not work with anything other than basic mode due to how the proxy works
+          </p>
+        </div>
+    </form>
+
+  
+      
+<div id="google-ad">
+
+	<script>
+		function $(id){
+			return document.getElementById(id);
+		}
+		
+		$('proxy-form').onsubmit = function(){
+			var url = $('url').value;
+			if(url.substr(0,4) != "https"){
+				url = "https://" + url;
+			}
+			window.location.href='https://cometproxy.nidez.repl.co/proxy/' + url;
+			return false;
+		};
+		
+		function checkError(){
+			var search = window.location.search;
+			var start = search.indexOf('error=');
+			if(start > -1){
+				var stop = search.indexOf('&', start);
+				if(stop == -1){ stop = undefined; }
+				// +6 for "error="
+				var err = search.substr(start+6, stop);
+                var $error = $('error');
+				$error.innerText = $error.textContent = decodeURIComponent(err);
+				$error.style.display = "block";
+			}
+		}
+    
+		window.onload = function() { 
+			$('url').focus(); 
+			checkError(); 
+		}
+	</script>
+
+
+  <script>
+		function $(id){
+			return document.getElementById(id);
+		}
+		
+		$('proxy-chain').onsubmit = function(){
+			var url = $('url2').value;
+			if(url.substr(0,4) != "https"){
+				url = "https://" + url;
+			}
+			window.location.href='https://cometproxy.nidez.repl.co/proxy/https://cometproxy.nidez.repl.co/proxychain/' + url;
+			return false;
+		};
+		
+		function checkError(){
+			var search = window.location.search;
+			var start = search.indexOf('error=');
+			if(start > -1){
+				var stop = search.indexOf('&', start);
+				if(stop == -1){ stop = undefined; }
+				// +6 for "error="
+				var err = search.substr(start+6, stop);
+                var $error = $('error');
+				$error.innerText = $error.textContent = decodeURIComponent(err);
+				$error.style.display = "block";
+			}
+		}
+    
+		window.onload = function() { 
+			$('url2').focus(); 
+			checkError(); 
+		}
+	</script>
+
+    <script>
+		function $(id){
+			return document.getElementById(id);
+		}
+		
+		$('proxy-redi').onsubmit = function(){
+			var url = $('url3').value;
+			if(url.substr(0,4) != "https"){
+				url = "https://" + url;
+			}
+			window.location.href='https://cometproxy.nidez.repl.co/proxy/https://cometproxy-redirect.nidez.repl.co/proxyredirect/' + url;
+			return false;
+		};
+		
+		function checkError(){
+			var search = window.location.search;
+			var start = search.indexOf('error=');
+			if(start > -1){
+				var stop = search.indexOf('&', start);
+				if(stop == -1){ stop = undefined; }
+				// +6 for "error="
+				var err = search.substr(start+6, stop);
+                var $error = $('error');
+				$error.innerText = $error.textContent = decodeURIComponent(err);
+				$error.style.display = "block";
+			}
+		}
+    
+		window.onload = function() { 
+			$('url3').focus(); 
+			checkError(); 
+		}
+	</script>
+
+      <script>
+		function $(id){
+			return document.getElementById(id);
+		}
+		
+		$('proxy-super').onsubmit = function(){
+			var url = $('url4').value;
+			if(url.substr(0,4) != "https"){
+				url = "https://" + url;
+			}
+			window.location.href='https://cometproxy.nidez.repl.co/proxy/https://cometproxy.nidez.repl.co/superchain/https://cometproxy-redirect.nidez.repl.co/proxyredirect/' + url;
+			return false;
+		};
+		
+		function checkError(){
+			var search = window.location.search;
+			var start = search.indexOf('error=');
+			if(start > -1){
+				var stop = search.indexOf('&', start);
+				if(stop == -1){ stop = undefined; }
+				// +6 for "error="
+				var err = search.substr(start+6, stop);
+                var $error = $('error');
+				$error.innerText = $error.textContent = decodeURIComponent(err);
+				$error.style.display = "block";
+			}
+		}
+    
+		window.onload = function() { 
+			$('url4').focus(); 
+			checkError(); 
+		}
+	</script>
+  
+</body>
+</html>
