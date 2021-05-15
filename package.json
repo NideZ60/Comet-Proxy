@@ -1,19 +1,19 @@
 {
-  "name": "Comet-Proxy",
+  "name": "CometProxy",
   "version": "1.0.0",
-  "description": "",
+  "description": "surf the web without chains.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "license": "GNU Lesser General Public License v2.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NideZ60/Comet-Proxy"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "querystring": "^0.2.1",
     "stream": "0.0.2",
     "unblocker": "^2.3.0",
     "url": "^0.11.0"
-  }
+  },
+  "author": "NideZ"
 }
